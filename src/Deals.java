@@ -8,16 +8,16 @@ public class Deals {
     public boolean addDeal(String deal){
         if (!list.contains(deal)){
             return list.add(deal);
-        } else return false;
+        }
+        return false;
     }
 
     public boolean deleteDealByIndex(String[] delList){
         delCol.clear();
-        for (int i = 0; i < list.size(); i++) {
-            for (String d : delList){
-                if (i == Integer.parseInt(d) - 1){
-                    delCol.add(list.get(i));
-                }
+        for (String d : delList){
+            int num = Integer.parseInt(d) - 1;
+            if (num >= 0 && num < list.size()){
+                delCol.add(list.get(num));
             }
         }
         if (!delCol.isEmpty()){
