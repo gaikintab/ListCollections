@@ -5,9 +5,9 @@ public class Tasks {
 
     protected List<String> listTasks = new ArrayList<>();
 
-    public boolean addTask(String deal){
-        if (!listTasks.contains(deal)){
-            return listTasks.add(deal);
+    public boolean addTask(String task){
+        if (!listTasks.contains(task)){
+            return listTasks.add(task);
         }
         return false;
     }
