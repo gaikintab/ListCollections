@@ -7,7 +7,7 @@ public class Main {
         String text;
         String[] deleteArr;
         Scanner scanner = new Scanner(System.in);
-        Deals task = new Deals();
+        Tasks task = new Tasks();
 
         while (!choose.equals("0")) {
             System.out.print("\nВыберите операцию:\n" +
@@ -26,7 +26,7 @@ public class Main {
                 case "1":
                     System.out.print("Введите название задачи: ");
                     text = scanner.nextLine();
-                    if (task.addDeal(text)){
+                    if (task.addTask(text)){
                         System.out.println("Добавлено!");
                     } else System.out.println("Такая задача уже есть!");
                     break;
@@ -35,7 +35,7 @@ public class Main {
                     text = scanner.nextLine();
                     deleteArr = text.split(",");
 
-                    if (task.deleteDealByIndex(deleteArr)) {
+                    if (task.deleteTaskByIndex(deleteArr)) {
                         System.out.println("Удалено!");
                     } else System.out.println("Такой задачи нет!");
                     break;
@@ -44,7 +44,7 @@ public class Main {
                     text = scanner.nextLine();
                     deleteArr = text.split(",");
 
-                    if (task.deleteDealByName(deleteArr)){
+                    if (task.deleteTaskByName(deleteArr)){
                         System.out.println("Удалено!");
                     } else System.out.println("Таких задач нет!");
                     break;
@@ -53,7 +53,7 @@ public class Main {
             }
             if (!choose.equals("0")) {
                 System.out.print("\nВаш список дел:\n");
-                System.out.println(task.getDeals());
+                System.out.println(task.getTasks());
             }
         }
     }

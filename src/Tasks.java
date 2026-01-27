@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Deals {
+public class Tasks {
 
     protected List<String> listTasks = new ArrayList<>();
 
-    public boolean addDeal(String deal){
+    public boolean addTask(String deal){
         if (!listTasks.contains(deal)){
             return listTasks.add(deal);
         }
         return false;
     }
 
-    public boolean deleteDealByIndex(String[] deleteArr){
+    public boolean deleteTaskByIndex(String[] deleteArr){
         List<String> delCol = new ArrayList<>();
         for (String digit : deleteArr){
             int index = Integer.parseInt(digit) - 1;
@@ -26,7 +26,7 @@ public class Deals {
         return false;
     }
 
-    public boolean deleteDealByName(String[] deleteArr){
+    public boolean deleteTaskByName(String[] deleteArr){
         List<String> delCol = new ArrayList<>();
         for (String task : listTasks){
             for (String word : deleteArr){
@@ -42,7 +42,7 @@ public class Deals {
         return false;
     }
 
-    public String getDeals(){
+    public String getTasks(){
         int counter = 0;
         String taskList = "";
         for(String task : listTasks){
