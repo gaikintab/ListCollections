@@ -1,56 +1,57 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Deals {
 
-    protected ArrayList<String> list = new ArrayList<>();
-    protected ArrayList<String> delCol = new ArrayList<>();
+    protected List<String> listTasks = new ArrayList<>();
 
     public boolean addDeal(String deal){
-        if (!list.contains(deal)){
-            return list.add(deal);
+        if (!listTasks.contains(deal)){
+            return listTasks.add(deal);
         }
         return false;
     }
 
-    public boolean deleteDealByIndex(String[] delList){
-        delCol.clear();
-        for (String d : delList){
-            int num = Integer.parseInt(d) - 1;
-            if (num >= 0 && num < list.size()){
-                delCol.add(list.get(num));
+    public boolean deleteDealByIndex(String[] deleteArr){
+        List<String> delCol = new ArrayList<>();
+        for (String digit : deleteArr){
+            int index = Integer.parseInt(digit) - 1;
+            if (index >= 0 && index < listTasks.size()){
+                delCol.add(listTasks.get(index));
             }
         }
         if (!delCol.isEmpty()){
-            return list.removeAll(delCol);
+            return listTasks.removeAll(delCol);
         }
         return false;
     }
 
-    public boolean deleteDealByName(String[] delList){
-        delCol.clear();
-        for (String l : list){
-            for (String d : delList){
-                if (l.toLowerCase().contains(d.toLowerCase())){
-                    delCol.add(l);
+    public boolean deleteDealByName(String[] deleteArr){
+        List<String> delCol = new ArrayList<>();
+        for (String task : listTasks){
+            for (String word : deleteArr){
+                if (task.toLowerCase().contains(word.toLowerCase())){
+                    delCol.add(task);
                     break;
                 }
             }
         }
         if (!delCol.isEmpty()){
-            return list.removeAll(delCol);
+            return listTasks.removeAll(delCol);
         }
         return false;
     }
 
     public String getDeals(){
         int counter = 0;
-        String t = "";
-        for(String D : list){
+        String taskList = "";
+        for(String task : listTasks){
             counter++;
-            t += counter + ". " + D + "\n";
+            taskList += counter + ". " + task + "\n";
         }
-        if (!t.isEmpty()){
-            return t;
-        } else return ("Список задач пуст!");
+        if (!taskList.isEmpty()){
+            return taskList;
+        }
+        return ("Список задач пуст!");
     }
 }

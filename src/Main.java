@@ -5,7 +5,7 @@ public class Main {
 
         String choose = "";
         String text;
-        String[] delList;
+        String[] deleteArr;
         Scanner scanner = new Scanner(System.in);
         Deals task = new Deals();
 
@@ -33,18 +33,18 @@ public class Main {
                 case "3":
                     System.out.print("Введите номера дел для удаления (номера через запятую): ");
                     text = scanner.nextLine();
-                    delList = text.split(",");
+                    deleteArr = text.split(",");
 
-                    if (task.deleteDealByIndex(delList)) {
+                    if (task.deleteDealByIndex(deleteArr)) {
                         System.out.println("Удалено!");
                     } else System.out.println("Такой задачи нет!");
                     break;
                 case "4":
                     System.out.print("Введите слово для удаления (слова в названиях дел через запятую): ");
                     text = scanner.nextLine();
-                    delList = text.split(",");
+                    deleteArr = text.split(",");
 
-                    if (task.deleteDealByName(delList)){
+                    if (task.deleteDealByName(deleteArr)){
                         System.out.println("Удалено!");
                     } else System.out.println("Таких задач нет!");
                     break;
