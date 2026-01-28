@@ -28,7 +28,9 @@ public class Main {
                     text = scanner.nextLine();
                     if (task.addTask(text)) {
                         System.out.println("Добавлено!");
-                    } else {System.out.println("Такая задача уже есть!");}
+                    } else {
+                        System.out.println("Такая задача уже есть!");
+                    }
                     break;
                 case "3":
                     System.out.print("Введите номера дел для удаления (номера через запятую): ");
@@ -37,7 +39,9 @@ public class Main {
 
                     if (task.deleteTaskByIndex(deleteArr)) {
                         System.out.println("Удалено!");
-                    } else {System.out.println("Такой задачи нет!");}
+                    } else {
+                        System.out.println("Такой задачи нет!");
+                    }
                     break;
                 case "4":
                     System.out.print("Введите слово для удаления (слова в названиях дел через запятую): ");
@@ -46,7 +50,9 @@ public class Main {
 
                     if (task.deleteTaskByName(deleteArr)) {
                         System.out.println("Удалено!");
-                    } else {System.out.println("Таких задач нет!");}
+                    } else {
+                        System.out.println("Таких задач нет!");
+                    }
                     break;
                 default:
                     if (!choose.equals("2")) {
