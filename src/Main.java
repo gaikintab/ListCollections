@@ -19,14 +19,14 @@ public class Main {
                     "4. Удалить дела по названию\n" +
                     "Ваш выбор: ");
             choose = scanner.nextLine();
-            switch (choose){
+            switch (choose) {
                 case "0":
                     System.out.println("Программа завершена");
                     break;
                 case "1":
                     System.out.print("Введите название задачи: ");
                     text = scanner.nextLine();
-                    if (task.addTask(text)){
+                    if (task.addTask(text)) {
                         System.out.println("Добавлено!");
                     } else System.out.println("Такая задача уже есть!");
                     break;
@@ -44,7 +44,7 @@ public class Main {
                     text = scanner.nextLine();
                     deleteArr = text.split(",");
 
-                    if (task.deleteTaskByName(deleteArr)){
+                    if (task.deleteTaskByName(deleteArr)) {
                         System.out.println("Удалено!");
                     } else System.out.println("Таких задач нет!");
                     break;
