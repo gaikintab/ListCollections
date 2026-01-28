@@ -16,7 +16,7 @@ public class Tasks {
         List<String> delCol = new ArrayList<>();
         for (String digit : deleteArr) {
             int index = Integer.parseInt(digit.trim()) - 1;
-            if (index >= 0 && index < tasks.size()){
+            if (index >= 0 && index < tasks.size()) {
                 delCol.add(tasks.get(index));
             }
         }
